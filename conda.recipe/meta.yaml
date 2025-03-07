@@ -1,0 +1,22 @@
+package:
+    name: demo_module
+    version: 0.1.0
+
+source:
+    path: ..
+
+build:
+    noarch: python
+    script: pip install --no-deps .
+  
+requirements:
+    build:
+        - python
+        - setuptools
+    run:
+        - python>=3.10
+
+about:
+    home: https://github.com/lutrarutra/pyproject_template
+    license: MIT
+    summary: ""
