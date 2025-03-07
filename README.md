@@ -1,35 +1,28 @@
 # pyproject_template
-Template repository for python modules/tools supporting pyproject.toml and conda recipe
+- From pyproject template: [github.com/lutrarutra/pyproject_template](https://github.com/lutrarutra/pyproject_template)
 
 ## Installation
 - pip:
     ```bash
     pip install -e .
     ```
+- conda:
+    ```bash
+    conda install lutrarutra::compile_html
+    ```
 
-## Usage (demo)
+## Usage
 - cli:
     ```bash
-    test_cli --help
+    compile-html -i <input_dir> -o <output_file> --entry <entry_html_file>
     ```
 - python:
     ```python
-    from demo_module.test import test_function
-    test_function()
+    from compile_html.compile import make_standalone_html
+    make_standalone_html(
+        source_folder='<input_dir>',
+        output_file='<output_file>',
+        main_html='<entry_html_file>'
+    )
     ```
-
-## Create conda package
-
-### Prerequisites
-- `conda install conda-build anaconda-client`
-
-```bash
-conda build purge
-build_path=$(conda build --output .)
-conda build --debug .
-anaconda upload "$build_path"
-```
-
-## Considerations
- - Make sure that `dependencies` in `pyproject.toml` match with `run requirements` in `conda.recipe/meta.yaml`
 

@@ -6,20 +6,21 @@ build-backend = "setuptools.build_meta"
 where = ["."]
 
 [project]
-name = "demo_module"
+name = "compile_html"
 version = "0.1.0"
 description = ""
 authors = [
-    { name = "author" }
+    { name = "lutrarutra", email = "artur.gynter@proton.me"}
 ]
 requires-python = ">=3.10"
 license = {text = "MIT"}
 
 dependencies = [
+    "beautifulsoup4"
 ]
 
 [project.scripts]
-test_cli = "demo_module.cli:main"
+compile-html = "compile_html.cli:main"
 
 [project.urls]
-Repository = "https://github.com/lutrarutra/pyproject_template"
+Repository = "https://github.com/lutrarutra/compile_html"
